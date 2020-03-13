@@ -8,43 +8,41 @@ namespace Library
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            BookStore bs = new BookStore();
-            Bookshelf bsh = new Bookshelf();
-            while (true)
-            {
-                Console.WriteLine();
-                Console.WriteLine("1 или 2 или 3 или 4");
-                int q = Convert.ToInt32(Console.ReadLine());
-                if (q == 1)
-                {
-                    Console.WriteLine("Введите название полки");
-                    string name = Console.ReadLine();
-                    bs.AddShelf(new Bookshelf(name));
-                }
-                if (q == 2)
-                {
-                    Console.WriteLine("Введите название книги");
-                    string bookName = Console.ReadLine();
-                    bsh.AddBook(new Book(bookName));
-                }
-                if(q == 3)
-                {
-                    Console.WriteLine("Вывод полок");
-                    bs.ShowShelf();
-                }
-                if(q == 4)
-                {
-                    Console.WriteLine("Вывод книг");
-                    bsh.ShowBooks();
-                }
+            List<Section> sections = new List<Section>();
+
+            Console.WriteLine("Добавить секцию");
+            Section section = new Section(Console.ReadLine());
+            sections.Add(section);
+            Console.WriteLine("Done");
+            Console.WriteLine("2");
+            Section section1 = new Section(Console.ReadLine());
+            sections.Add(section1);
+            Console.WriteLine("Vivod");
+            //foreach(Section s in sections)
+            //    Console.WriteLine(s.name);
 
 
-                Console.ReadLine();
-            }
+
+
+            Console.WriteLine("Имя полки");
+            section1.AddShelf(Console.ReadLine());
+            Console.WriteLine("Имя полки2");
+            section1.AddShelf(Console.ReadLine());
+            Console.WriteLine("Имя полки3");
+            section1.AddShelf(Console.ReadLine());
+            Console.WriteLine("Vivod");
+            section1.ShowShelf();
+
             
+
+
+
+
+            Console.ReadLine();
         }
-        
+
     }
 }
