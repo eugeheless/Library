@@ -9,10 +9,11 @@ namespace Library
     class Section
     {
         public string name { get; set; }
-        List<Shelf> shelves = new List<Shelf>();
+        List<Shelf> shelves;
         public Section(string Name)
         {
             this.name = Name;
+            shelves = new List<Shelf>();
         }
 
         public void AddShelf(string name)
