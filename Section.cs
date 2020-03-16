@@ -13,6 +13,7 @@ namespace Library
         public Section(string Name)
         {
             this.name = Name;
+            shelves = new List<Shelf>();
         }
 
         public void AddShelf(string name)
@@ -21,9 +22,8 @@ namespace Library
             shelves.Add(shelf);
         }
 
-        public void RemoveShelf(Shelf shelf)
-        {
-            shelves.Remove(shelf);
+        public void RemoveShelf()
+        { 
         }
 
         public void ShowShelf()

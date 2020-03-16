@@ -12,36 +12,37 @@ namespace Library
         static void Main(string[] args)
         {
             List<Section> sections = new List<Section>();
-
-            Console.WriteLine("Добавить секцию");
+            Console.WriteLine("Какое имя секции?");
             Section section = new Section(Console.ReadLine());
             sections.Add(section);
-            Console.WriteLine("Done");
-            Console.WriteLine("2");
-            Section section1 = new Section(Console.ReadLine());
-            sections.Add(section1);
-            Console.WriteLine("Vivod");
-            //foreach(Section s in sections)
-            //    Console.WriteLine(s.name);
+            while (true)
+            {
+                Console.WriteLine("Добавить полку(1), посмотреть(2), удалить(3)\nДобавить книгу(4), просмотреть(5), удалить(6)");
+                string q = Console.ReadLine();
+                if (q == "1")
+                {
+                    Console.WriteLine("Какое имя полки?");
+                    section.AddShelf(Console.ReadLine());
+                }
+                if (q == "2")
+                {
+                    section.ShowShelf();
+                }
+                if (q == "3")
+                {
+                    section.RemoveShelf();
+                }
+                if (q == "4")
+                {
+                }
+                if (q == "5")
+                {
+                }
+                if (q == "6")
+                {
+                }
+            }
 
-
-
-
-            Console.WriteLine("Имя полки");
-            section1.AddShelf(Console.ReadLine());
-            Console.WriteLine("Имя полки2");
-            section1.AddShelf(Console.ReadLine());
-            Console.WriteLine("Имя полки3");
-            section1.AddShelf(Console.ReadLine());
-            Console.WriteLine("Vivod");
-            section1.ShowShelf();
-
-            
-
-
-
-
-            Console.ReadLine();
         }
 
     }

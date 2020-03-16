@@ -13,6 +13,7 @@ namespace Library
         public Shelf(string Name)
         {
             this.name = Name;
+            books = new List<Book>();
         }
 
         public void AddBook(string name)
