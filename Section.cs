@@ -9,11 +9,10 @@ namespace Library
     class Section
     {
         public string name { get; set; }
-        public List<Shelf> shelves { get; set; }
+        List<Shelf> shelves = new List<Shelf>();
         public Section(string Name)
         {
             this.name = Name;
-            shelves = new List<Shelf>();
         }
 
         public void AddShelf(string name)
@@ -22,8 +21,16 @@ namespace Library
             shelves.Add(shelf);
         }
 
-        public void RemoveShelf()
+        public void RemoveShelf(string name)
         { 
+            foreach(Shelf s in shelves)
+            {
+                if(s.name == name)
+                {
+                    shelves.Remove(s);
+                    break;
+                }
+            }
         }
 
         public void ShowShelf()

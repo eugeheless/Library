@@ -30,10 +30,12 @@ namespace Library
                 }
                 if (q == "3")
                 {
-                    section.RemoveShelf();
+                    Console.WriteLine("Введите название полки");
+                    section.RemoveShelf(Console.ReadLine());
                 }
                 if (q == "4")
                 {
+                    Console.WriteLine("Какое имя книги");
                 }
                 if (q == "5")
                 {

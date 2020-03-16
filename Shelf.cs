@@ -9,22 +9,32 @@ namespace Library
     class Shelf
     {
         public string name { get; set; }
-        public  List<Book> books { get; set; }
+        List<Book> books = new List<Book>();
+        public Shelf()
+        {
+        }
         public Shelf(string Name)
         {
             this.name = Name;
-            books = new List<Book>();
         }
 
         public void AddBook(string name)
         {
             Book book = new Book(name);
             books.Add(book);
+            
         }
 
-        public void RemoveBook(Book book)
+        public void RemoveBook(string name)
         {
-            books.Remove(book);
+            foreach (Book b in books)
+            {
+                if (b.name == name)
+                {
+                    books.Remove(b);
+                    break;
+                }
+            }
         }
 
         public void ShowBooks()
